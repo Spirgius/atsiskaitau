@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+    </nav>
+
+    <div id="main-wrapper container columns">
+        <div class="registration-wrapper column block">
+            <form id="registration-form">
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input registration-username required" type="text" placeholder="Username" name="username" value="">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left">
+                      <input class="input registration-password required" type="password" placeholder="Password" name="password" value="">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left">
+                      <input class="input registration-password-rpt required " type="password" placeholder="Repeat password" name="passwordRpt" value="">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control">
+                      <button class="button is-success" type="submit">
+                        Register
+                      </button>
+                    </p>
+                  </div>
+            </form>
+        </div>
+
+        <div class="login-wrapper column block">
+            <form id="login-form">
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input login-input" type="text" placeholder="Username" name="username" value="">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left">
+                      <input class="input login-input " type="password" placeholder="Password" name="password" value="">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control">
+                      <button class="button is-success" type="submit">
+                        Login
+                      </button>
+                    </p>
+                  </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>

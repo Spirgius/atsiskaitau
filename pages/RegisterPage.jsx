@@ -5,7 +5,7 @@ const RegisterPage = () => {
 
 
   return (
-    <div className='container registrationPage margin-nav'>
+    <div className='page container registerPage'>
         <RegistrationForm></RegistrationForm>
     </div>
   )

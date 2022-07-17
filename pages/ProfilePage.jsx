@@ -5,7 +5,7 @@ const ProfilePage = () => {
 
 
   return (
-    <div className="margin-nav profilePage container is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+    <div className="page profilePage container is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
         <UserProfile/>
     </div>
     )

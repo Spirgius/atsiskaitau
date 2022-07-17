@@ -8,24 +8,23 @@ import {setCurrentUser} from "../features/user";
 const LoginForm = () => {
 
 
-    const emailRef = useRef()
+    const nicknameRef = useRef()
     const passRef = useRef()
 
     const nav = useNavigate()
     const dis = useDispatch()
 
     const allUsers = useSelector(state => state.user.value.allUsers)
-    const currentUser = useSelector(state => state.user.value.currentUser)
     const [error, setError] = useState(null)
 
     function loginUser() {
         const user = {
-            email: emailRef.current.value,
-            password: passRef.current.value,
+            nickname: nicknameRef.current.value,
+            password: passRef.current.value
         }
 
-        const userLoggedIn = allUsers.find(x => x.email === user.email && x.password === user.password)
-        if(!userLoggedIn) return setError("bad credentials provided")
+        const userLoggedIn = allUsers.find(x => x.nickname === user.nickname && x.password === user.password)
+        if(!userLoggedIn) return setError("Check your credentials and try again")
 
         dis(setCurrentUser(userLoggedIn))
 
@@ -37,7 +36,7 @@ const LoginForm = () => {
     <div className='form box is-flex is-justify-content-center is-flex-direction-column'>
     <div className="field">
         <p className="control has-icons-left has-icons-right">
-            <input ref={emailRef} className="input" type="email" placeholder="Email"/>
+            <input ref={nicknameRef} className="input" type="text" placeholder="Username"/>
             <span className="icon is-small is-left">
             <i className="fas fa-envelope"></i>
             </span>

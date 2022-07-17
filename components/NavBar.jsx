@@ -1,5 +1,6 @@
 import React from "react"
-import {Link, useNavigate} from "react-router-dom";
+import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {setCurrentUser} from "../features/user";
 
@@ -13,12 +14,17 @@ export default function Navbar() {
       dis(setCurrentUser(null))
       nav('/')
   }
-    const [isActive, setisActive] = React.useState(false)
+    const [isActive, setisActive] = useState(false)
+
+    function clickNavbarLink (str) {
+      nav(str)
+      setisActive(!isActive)
+    }
   
     return (
-      <nav className='navbar is-primary' role='navigation' aria-label='main navigation'>
+      <nav className='navbar is-info is-fixed-top' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
-          <a href='/' className='navbar-item'>
+          <a className='navbar-item'>
             <img
               src='https://bulma.io/images/bulma-logo.png'
               alt='Logo'
@@ -46,10 +52,10 @@ export default function Navbar() {
         <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
           <div className='navbar-end'>
             <div className='navbar-item'>
-              <a onClick={()=>{nav('/')}} className='navbar-item'>
+              <a onClick={()=>{clickNavbarLink('/')}} className='navbar-item'>
                 Login
               </a>
-              <a onClick={()=>{nav('/register')}} className='navbar-item'>
+              <a onClick={()=>{clickNavbarLink('/register')}} className='navbar-item'>
                 Register
               </a>
             </div>
@@ -59,11 +65,14 @@ export default function Navbar() {
         <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <div className='navbar-end'>
           <div className='navbar-item'>
-            <a onClick={()=>{nav('/profile')}} className='navbar-item'>
+            <a onClick={()=>{clickNavbarLink('/profile')}} className='navbar-item'>
               Profile
             </a>
-            <a onClick={()=>{nav('/reservations')}} className='navbar-item'>
-              Reservations
+            <a onClick={()=>{clickNavbarLink('/allUsers')}} className='navbar-item'>
+              Users
+            </a>
+            <a onClick={()=>{clickNavbarLink('/conversations')}} className='navbar-item'>
+              Chat
             </a>
             <a onClick={logout} className='navbar-item'>
               Logout
